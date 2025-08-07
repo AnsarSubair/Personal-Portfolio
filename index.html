@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ansar Subair | Strategic HR & Operations Professional</title>
+    <meta name="description" content="Personal portfolio of Ansar Subair, an MBA graduate with over 7 years of experience in Human Resources, PRO, Operations Management, and Warehouse & Logistics.">
+    <meta name="keywords" content="Ansar Subair, HR, PRO, Operations Management, Logistics, MBA, Portfolio">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #495057;
+            --brand-dark: #0a192f; /* Deep Navy */
+            --brand-accent: #d4af37; /* Muted Gold */
+            --brand-light: #e9ecef;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+        }
+        
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; 
+        }
+        section.snap-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .bg-brand-dark { background-color: var(--brand-dark); }
+        .text-brand-dark { color: var(--brand-dark); }
+        .border-brand-dark { border-color: var(--brand-dark); }
+        .text-brand-accent { color: var(--brand-accent); }
+        .border-brand-accent { border-color: var(--brand-accent); }
+        .hover-bg-brand-accent:hover { background-color: #c8a230; }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+            color: var(--brand-dark);
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--brand-accent);
+            border-radius: 2px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--brand-light);
+            transform: translateX(-50%);
+        }
+        .timeline-item { position: relative; width: 50%; padding: 20px 40px; box-sizing: border-box; }
+        .timeline-item:nth-child(odd) { left: 0; padding-right: 20px; text-align: right; }
+        .timeline-item:nth-child(even) { left: 50%; padding-left: 60px; text-align: left; }
+        .timeline-item::after {
+            content: ''; position: absolute; width: 20px; height: 20px; background-color: white;
+            border: 4px solid var(--brand-accent); top: 25px; border-radius: 50%; z-index: 1;
+        }
+        .timeline-item:nth-child(odd)::after { right: -12px; }
+        .timeline-item:nth-child(even)::after { left: -12px; }
+
+        @media screen and (max-width: 768px) {
+            html { scroll-padding-top: 68px; }
+            .timeline::before { left: 10px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 10px; text-align: left; }
+            .timeline-item:nth-child(even) { left: 0%; padding-left: 50px; }
+            .timeline-item:nth-child(odd)::after, .timeline-item:nth-child(even)::after { left: -1px; }
+        }
+
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .whatsapp-fab {
+            position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease; z-index: 100;
+        }
+        .whatsapp-fab:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-brand-dark">Ansar Subair</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 hover:text-brand-dark transition duration-300">About</a>
+                <a href="#experience" class="text-gray-600 hover:text-brand-dark transition duration-300">Experience</a>
+                <a href="#skills" class="text-gray-600 hover:text-brand-dark transition duration-300">Skills</a>
+                <a href="#blog" class="text-gray-600 hover:text-brand-dark transition duration-300">Insights</a>
+                <a href="#contact" class="text-gray-600 hover:text-brand-dark transition duration-300">Contact</a>
+                <a href="https://www.linkedin.com/in/ansarsubair" target="_blank" class="text-gray-600 hover:text-brand-dark transition duration-300"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-brand-dark">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2">
+            <a href="#about" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">About</a>
+            <a href="#experience" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Experience</a>
+            <a href="#skills" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Skills</a>
+            <a href="#blog" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Insights</a>
+            <a href="#contact" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">Contact</a>
+            <a href="https://www.linkedin.com/in/ansarsubair" target="_blank" class="block px-6 py-2 text-gray-600 hover:bg-gray-100">LinkedIn</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="snap-section bg-white">
+            <div class="container mx-auto px-6 flex flex-col justify-center items-center">
+                <!-- Text Section -->
+                <div class="w-full text-center fade-in">
+                    <h1 class="text-4xl md:text-6xl font-bold text-brand-dark leading-tight">Ansar Subair</h1>
+                    <p class="text-xl md:text-2xl text-gray-600 mt-4">Strategic HR & Operations Professional</p>
+                    <p class="text-gray-500 mt-6 max-w-3xl mx-auto">MBA graduate with 7+ years of cross-functional expertise in driving organizational excellence through strategic HR, seamless operations, and efficient logistics management.</p>
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://www.linkedin.com/in/ansarsubair" target="_blank" class="bg-brand-dark text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300 flex items-center justify-center gap-2">
+                           <i class="fab fa-linkedin"></i> LinkedIn Profile
+                        </a>
+                        <a href="Ansar Subair_HR_PRO.pdf" download class="text-brand-dark font-semibold py-3 px-6 rounded-lg border-2 border-brand-dark hover:bg-gray-100 transition duration-300 flex items-center justify-center gap-2">
+                            Download Resume <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="snap-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">About Me</h2>
+                <div class="max-w-4xl mx-auto text-center text-gray-600 text-lg leading-relaxed fade-in">
+                    <p>I am a results-driven and MBA-qualified professional with over seven years of comprehensive experience across Human Resources, Public Relations (PRO), Operations Management, and Warehouse & Logistics. My career has been built on a foundation of versatility, allowing me to thrive in dynamic, multi-faceted roles within the trading and service sectors in the UAE.</p>
+                    <p class="mt-4">From spearheading end-to-end HR functions and managing government relations to optimizing complex supply chains and streamlining warehouse operations, I excel at integrating diverse business functions to achieve strategic objectives. I am passionate about implementing process improvements, leveraging technology like ERP and HRMS systems, and fostering a collaborative environment to enhance efficiency and drive sustainable growth.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="snap-section bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="relative timeline max-w-5xl mx-auto mt-12">
+                    <div class="timeline-item fade-in">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-brand-accent">
+                            <h3 class="text-xl font-bold text-brand-dark">HR and Public Relations Officer (PRO)</h3>
+                            <p class="text-gray-500 font-medium">Al Qatara Golden General Trading LLC, Abu Dhabi</p>
+                            <p class="text-sm text-gray-400 mb-4">May 2020 - May 2025</p>
+                            <ul class="list-disc list-inside text-gray-600 text-left">
+                                <li>Managed all government relations and ensured regulatory compliance.</li>
+                                <li>Oversaw visa processing, license renewals, and labor audits.</li>
+                                <li>Supervised a team of PROs and improved e-service efficiency by 30%.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-brand-accent">
+                            <h3 class="text-xl font-bold text-brand-dark">Admin and HR</h3>
+                            <p class="text-gray-500 font-medium">Jahran General Trading LLC, Abu Dhabi</p>
+                            <p class="text-sm text-gray-400 mb-4">Dec 2018 - Apr 2020</p>
+                            <ul class="list-disc list-inside text-gray-600">
+                                <li>Streamlined office operations, reducing admin time by 30%.</li>
+                                <li>Managed procurement, vendor relations, and inventory systems.</li>
+                                <li>Supported HR with onboarding and maintained 98% compliance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item fade-in">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-brand-accent">
+                            <h3 class="text-xl font-bold text-brand-dark">Logistics and Warehouse Co-ordinator</h3>
+                            <p class="text-gray-500 font-medium">Al Qatara Golden General Trading LLC, Abu Dhabi</p>
+                            <p class="text-sm text-gray-400 mb-4">(Concurrent Role)</p>
+                            <ul class="list-disc list-inside text-gray-600 text-left">
+                                <li>Oversaw all receiving area operations and inbound logistics.</li>
+                                <li>Reduced inventory discrepancies by over 30% using warehouse systems.</li>
+                                <li>Ensured FIFO compliance and maintained high safety standards.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="timeline-item fade-in">
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-md border-l-4 border-brand-accent">
+                            <h3 class="text-xl font-bold text-brand-dark">Retail Sales Advisor</h3>
+                            <p class="text-gray-500 font-medium">Etisalat, Abu Dhabi</p>
+                            <p class="text-sm text-gray-400 mb-4">Sep 2015 - Oct 2018</p>
+                            <ul class="list-disc list-inside text-gray-600">
+                               <li>Provided exceptional customer service and handled POS transactions.</li>
+                               <li>Assisted with inventory counts and maintained stock levels.</li>
+                               <li>Developed strong communication and problem-solving skills.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Tools Section -->
+        <section id="skills" class="snap-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Skills & Tools</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-users-cog text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">HR Management</h3>
+                        <p class="text-gray-500">Talent Acquisition, Onboarding, Employee Relations, Payroll (WPS)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-passport text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">PRO Services</h3>
+                        <p class="text-gray-500">Visa Processing, License Renewal, MOHRE & GDRFA Portals</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-cogs text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">Operations</h3>
+                        <p class="text-gray-500">Process Optimization, Vendor Management, Cost Control</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-warehouse text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">Logistics</h3>
+                        <p class="text-gray-500">Inventory Control, Supply Chain, Warehouse Management</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-cash-register text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">Accounting</h3>
+                        <p class="text-gray-500">Financial Reporting, VAT Compliance, Bank Reconciliation</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-chart-line text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">ERP/CRM Systems</h3>
+                        <p class="text-gray-500">ZOHO (CRM, Books, Inventory), Tally, QuickBooks</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fab fa-microsoft text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">Microsoft Office</h3>
+                        <p class="text-gray-500">Advanced Excel (VLOOKUP, Pivot Tables), Word, PowerPoint</p>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg shadow-lg text-center fade-in">
+                        <i class="fas fa-leaf text-4xl text-brand-accent mb-4"></i>
+                        <h3 class="text-lg font-bold text-brand-dark">HRM Software</h3>
+                        <p class="text-gray-500">Experience with platforms like BambooHR for HR processes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="snap-section bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Insights from the Field</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden fade-in">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">The Key to Seamless Operations</h3>
+                            <p class="text-gray-600 mb-4">Discover practical strategies to streamline your business processes, reduce bottlenecks, and enhance overall efficiency...</p>
+                            <a href="#" class="font-semibold text-brand-dark hover:text-brand-accent">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden fade-in">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Navigating UAE Labour Law</h3>
+                            <p class="text-gray-600 mb-4">A deep dive into the critical aspects of UAE labor law that every HR professional and business owner should know...</p>
+                            <a href="#" class="font-semibold text-brand-dark hover:text-brand-accent">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden fade-in">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-brand-dark mb-2">Inventory Management Hacks</h3>
+                            <p class="text-gray-600 mb-4">Learn how to effectively manage your inventory to prevent stockouts, reduce carrying costs, and improve cash flow...</p>
+                            <a href="#" class="font-semibold text-brand-dark hover:text-brand-accent">Read More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="snap-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg fade-in">
+                    <p class="text-center text-gray-600 mb-8">I'm currently seeking new opportunities and would love to hear from you. Whether you have a question or just want to connect, feel free to reach out.</p>
+                    <form action="#" method="POST">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent">
+                            <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent">
+                        </div>
+                        <div class="mt-6">
+                            <textarea placeholder="Your Message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"></textarea>
+                        </div>
+                        <div class="text-center mt-6">
+                            <button type="submit" class="bg-brand-dark text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-gray-800 transition duration-300">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.linkedin.com/in/ansarsubair" target="_blank" class="hover:text-brand-accent transition duration-300"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="mailto:ansarsubair1995@gmail.com" class="hover:text-brand-accent transition duration-300"><i class="fas fa-envelope fa-2x"></i></a>
+            </div>
+            <p>&copy; 2024 Ansar Subair. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with a professional touch to showcase expertise.</p>
+        </div>
+    </footer>
+    
+    <!-- WhatsApp FAB -->
+    <a href="https://wa.me/971555607760" target="_blank" class="whatsapp-fab">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+                if(mobileMenu.classList.contains('hidden') === false){
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Fade-in animation on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+    </script>
+</body>
+</html>
